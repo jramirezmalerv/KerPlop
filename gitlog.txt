@@ -1,0 +1,17 @@
+commit abace968471817c6576b033141f6f623160b6c82
+Author: NeutrinoBomb <graystamant@gmail.com>
+Date:   Mon Sep 18 19:39:49 2023 -0600
+
+    Finished Product of KerPlop
+
+commit a597a3b2abfc0bd95b907360581c452f19398622
+Author: Joshua Ramirez Malerva <103471658+jramirezmalerv@users.noreply.github.com>
+Date:   Mon Sep 18 19:33:22 2023 -0600
+
+    Update .gitignore
+
+commit 4b5aa1fbd318cc272efe85d53234e79adff7a405
+Author: Joshua Ramirez <jramirezmalerv@gmail.com>
+Date:   Mon Sep 18 19:29:35 2023 -0600
+
+    first commit
