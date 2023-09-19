@@ -8,8 +8,8 @@ import gameEngine.InteractionResult;
  *  This is an abstract class because it contains an abstract 
  *  method AND an instance variable
  * 
- * @author Mark Baldwin
- * @author Cyndi Rader
+ * @author Gray St. Amant
+ * @author Josh Ramirez
  *
  */
 public abstract class GamePiece implements Drawable {
@@ -23,13 +23,13 @@ public abstract class GamePiece implements Drawable {
 	/**
 	 * Constructor for the game piece
 	 * 
-	 * @param string  symbol for the game piece
+	 * @param symbol  symbol for the game piece
 	 * @param label TODO
 	 * @param location initial location
 	 */
-	public GamePiece(String string, String label, int location) {
+	public GamePiece(String symbol, String label, int location) {
 		super();
-		this.symbol = string;
+		this.symbol = symbol;
 		this.label = label ;
 		this.location = location;
 	}

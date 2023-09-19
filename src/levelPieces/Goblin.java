@@ -5,30 +5,53 @@ import gameEngine.Moveable;
 import gameEngine.InteractionResult;
 
 
-// Uses the HIT interaction result
-public class Goblin extends GamePiece implements Moveable, Drawable {
+/**
+ * Class definition for movable object Goblin.
+ * 
+ * @author Gray St. Amant
+ * @author Josh Ramirez
+ * 
+ * @Date: 9/14/23
+ *
+ *@Collaborators: N/A
+ *
+ * @Sources: N/A 
+ */
 
-	public Goblin(String symbol, String label, int location) {
-		super(symbol, label, location);
-		// TODO Auto-generated constructor stub
+
+//Uses the HIT interaction result
+
+
+public class Goblin extends GamePiece implements Moveable, Drawable{
+	
+	private int direction;
+	
+	public Goblin(int location) {
+		super("٩(̾●̮̮̃̾•̃̾)۶", "Goblin (Moves from left to right each turn. "
+				+ "If the player runs into it, they loose a health point.)", location);
+		direction = -1;
 	}
 
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
-		// TODO Auto-generated method stub
+		gameBoard[this.getLocation()] = null;
 		
-	}
-
-	@Override
+		this.setLocation(this.getLocation() + direction);
+		gameBoard[this.getLocation()] = this;
+		direction *= -1;	
+	}	
+	
+	
 	public void draw() {
-		System.out.println("^(;,;)^");
-		
+		System.out.print("٩(̾●̮̮̃̾•̃̾)۶");
 	}
 
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
-		return InteractionResult.HIT;
-	}
-
+		if(this.getLocation() == playerLocation)
+			return InteractionResult.HIT;
+		else
+			return InteractionResult.NONE;
+		}
 }

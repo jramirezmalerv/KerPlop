@@ -6,13 +6,16 @@ import levelPieces.GamePiece;
 import levelPieces.LevelSetup;
 
 /**
- * Framework for LevelGame.
+ * Frame work for game engine.
+ *  
+ * @author Gray St. Amant
+ * @author Josh Ramirez
  * 
- * @author Mark Baldwin
- * @author Cyndi Rader
- * 
- * 
+ * @Date: 9/14/23
  *
+ *@Collaborators: N/A
+ *
+ * @Sources: N/A 
  */
 
 public class GameEngine {
@@ -96,6 +99,7 @@ public class GameEngine {
 		System.out.println("The object of the game is to capture prizes without being killed.");
 		System.out.println("You need " + Player.POINTS_TO_ADVANCE + 
 				" points to advance, you die after " + Player.POINTS_TO_DIE + " hits.") ;
+		
 	}
 	
 
@@ -114,9 +118,9 @@ public class GameEngine {
 			// prompt and update the player's location
 			player.doMove(gameBoard);
 
-			interaction(); // process interactions after player moves
-
 			movePieces(); // then move the pieces
+			
+			interaction(); // process interactions after player and pieces move
 		}
 	}
 
@@ -147,7 +151,7 @@ public class GameEngine {
 	 * can be used.
 	 */
 	public void displayBoard() {
-		for (int i = 0; i < gameBoard.length; i++) {										
+		for (int i = 0; i < gameBoard.length; i++) {
 			// Ensure player is always drawn, even if on top of another piece
 			// Note, only 1 piece per location except player can be on top of another
 			if (i == player.getLocation())
@@ -170,7 +174,6 @@ public class GameEngine {
 			piece.move(gameBoard, player.getLocation());
 		}
 	}
-
 	/**
 	 * Calls the interact method for each interactingPiece (i.e., GamePiece) All
 	 * interacting pieces should be placed in the interactingPieces list. GameEngine
