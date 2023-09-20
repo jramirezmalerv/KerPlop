@@ -39,17 +39,34 @@ public class TestMovingPieces {
 
 	}
 	
+	// Test that Goblin's location is the same as player's location when goblin moves to the left one
+	
 	@Test
-	public void testGoblinMovement() {
+	public void testGoblinLeft() {
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
 		Goblin goblin = new Goblin(12);
 		gameBoard[12] = goblin;
 		
 		Player player = new Player(11);
-		
 		gameBoard[11] = player;
 		
 		goblin.move(gameBoard, 11);
+		
+		assertTrue(player.getLocation() == goblin.getLocation());
+		
+		
+	}
+	
+	@Test
+	public void testGoblinRight() {
+		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		Goblin goblin = new Goblin(12);
+		gameBoard[12] = goblin;
+		
+		Player player = new Player(13);
+		gameBoard[11] = player;
+		
+		goblin.move(gameBoard, 13);
 		
 		assertTrue(player.getLocation() == goblin.getLocation());
 		
