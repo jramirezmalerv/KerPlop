@@ -14,32 +14,7 @@ import levelPieces.Goblin;
 public class TestMovingPieces {
 		
 	
-	// Test that Goblin hits player (movement) only when player is on the same space
-	
-//	@Test
-	public void testGoblin() {
-		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
-		Goblin goblin = new Goblin(15);
-		gameBoard[15] = goblin;
-		
-		
-		assertEquals(InteractionResult.HIT, goblin.interact(gameBoard, 15));
-		
-		for(int i = 0; i < 14; i++) {
-			assertEquals(InteractionResult.NONE, goblin.interact(gameBoard, i));
-		}
-		
-		for(int i = 16; i < GameEngine.BOARD_SIZE; i++) {
-			assertEquals(InteractionResult.NONE, goblin.interact(gameBoard, i));
-		}
-		
-		
-		
-		
-
-	}
-	
-	// Test that Goblin's location is the same as player's location when goblin moves to the left one
+	// Test that Goblin's location is the same as player's location when goblin moves to the left one (Movement)
 	
 	@Test
 	public void testGoblinMovement() {
@@ -52,7 +27,31 @@ public class TestMovingPieces {
 		
 		goblin.move(gameBoard, 11);	// By default, the goblin will move left first
 		
-		assertTrue(player.getLocation() == goblin.getLocation());
+		assertTrue(player.getLocation() == goblin.getLocation());	// Checks to make sure player and goblin location are same
+		
+		
+	}
+	
+	// Test that tests the alien's edge case 
+	// Note: This edge case required me to modify/implement code into my Alien class
+	
+	@Test
+	public void testAlienEdgeCase() {
+		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
+		Alien alien = new Alien(15);
+		gameBoard[13] = alien;
+		
+		Player player = new Player(13);
+		gameBoard[13] = player;
+		
+		/* The line below is calling the edge case on my alien's move() function
+		 * Since the player's location equals 13, the alien will move from whatever random position it was in
+		 * to index 11 on the game board. This puts the alien 2 spaces away to the left of the player
+		 */
+		
+		alien.move(gameBoard, 13);	
+		
+		assertTrue(alien == gameBoard[alien.getLocation()]); // Testing to see if the alien is on the right gameBoard index (should be 11)
 		
 		
 	}

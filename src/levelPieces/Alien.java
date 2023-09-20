@@ -36,12 +36,24 @@ public class Alien extends GamePiece implements Moveable, Drawable{
 	
 	@Override
 	public void move(Drawable[] gameBoard, int playerLocation) {
-		Random rand = new Random();
-	    int randomNum = rand.nextInt((upperBound - lowerBound) + 1) + lowerBound;
-	    
-	    gameBoard[this.getLocation()] = null;
-	    this.setLocation(randomNum);
-	    gameBoard[this.getLocation()] = this;
+		
+		// Edge Case to trick the player and make the game more difficult
+		if(playerLocation == 13) {
+			gameBoard[this.getLocation()] = null;	// Sets alien's piece to null on board
+			this.setLocation(playerLocation - 2);	// Set alien's location to be right next to player
+			gameBoard[this.getLocation()] = this;	// Sets alien's piece to new spot on board
+			
+		}
+		else {
+			Random rand = new Random();
+		    int randomNum = rand.nextInt((upperBound - lowerBound) + 1) + lowerBound;
+		    
+		    gameBoard[this.getLocation()] = null;
+		    this.setLocation(randomNum);
+		    gameBoard[this.getLocation()] = this;
+		    
+		}
+		
 	    
 	}
 
