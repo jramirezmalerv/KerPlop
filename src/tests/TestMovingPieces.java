@@ -16,7 +16,7 @@ public class TestMovingPieces {
 	// Test that Goblin hits player (movement) only when player is on the same space
 	
 	@Test
-	public void testGoblinMovement() {
+	public void testGoblin() {
 		Drawable [] gameBoard = new Drawable[GameEngine.BOARD_SIZE];
 		Goblin goblin = new Goblin(15);
 		gameBoard[15] = goblin;
