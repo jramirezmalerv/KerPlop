@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import gameEngine.Drawable;
 import gameEngine.GameEngine;
-import gameEngine.InteractionResult;
 import gameEngine.Player;
 import levelPieces.Alien;
 import levelPieces.Goblin;
@@ -46,12 +45,14 @@ public class TestMovingPieces {
 		
 		/* The line below is calling the edge case on my alien's move() function
 		 * Since the player's location equals 13, the alien will move from whatever random position it was in
-		 * to index 11 on the game board. This puts the alien 2 spaces away to the left of the player
+		 * to index 11 on the game board. This puts the alien 2 spaces away to the left of the player. This is the edge case
 		 */
 		
 		alien.move(gameBoard, 13);	
 		
-		assertTrue(alien == gameBoard[alien.getLocation()]); // Testing to see if the alien is on the right gameBoard index (should be 11)
+		// Testing to see if the alien is on the right gameBoard index (should be 11)
+		// You can visibly see thiss change occur when you play the 2nd level of our KerPlop game (if you even get that far)
+		assertTrue(alien == gameBoard[alien.getLocation()]); 
 		
 		
 	}
