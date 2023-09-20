@@ -36,7 +36,6 @@ public class Goblin extends GamePiece implements Moveable, Drawable{
 	public void move(Drawable[] gameBoard, int playerLocation) {
 		gameBoard[this.getLocation()] = null;	// Sets goblin's to null
 		
-		
 		this.setLocation(this.getLocation() + direction);	// Sets goblin's location to go left
 		gameBoard[this.getLocation()] = this;
 		direction *= -1;	
