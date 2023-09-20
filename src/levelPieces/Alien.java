@@ -35,8 +35,6 @@ public class Alien extends GamePiece implements Moveable, Drawable{
 	}
 	
 	@Override
-	
-	
 	public void move(Drawable[] gameBoard, int playerLocation) {
 		Random rand = new Random();
 	    int randomNum = rand.nextInt((upperBound - lowerBound) + 1) + lowerBound;

@@ -2,6 +2,8 @@ package gameEngine;
 
 import java.util.Scanner;
 
+import levelPieces.Goblin;
+
 /**
  * The actual game player Keeps track of player status (location, hit points,
  * etc.) Manages player movement.
@@ -220,5 +222,6 @@ public class Player implements Drawable {
 	public void draw() {
 		System.out.print(symbol);
 	}
+	
 	
 }
