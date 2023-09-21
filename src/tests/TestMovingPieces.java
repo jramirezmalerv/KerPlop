@@ -51,7 +51,7 @@ public class TestMovingPieces {
 		alien.move(gameBoard, 13);	
 		
 		// Testing to see if the alien is on the right gameBoard index (should be 11)
-		// You can visibly see thiss change occur when you play the 2nd level of our KerPlop game (if you even get that far)
+		// You can visibly see this change occur when you play the 2nd level of our KerPlop game (if you even get that far)
 		assertTrue(alien == gameBoard[alien.getLocation()]); 
 		
 		

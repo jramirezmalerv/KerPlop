@@ -40,7 +40,7 @@ public class TestInteractions {
 		gameBoard[15] = goblin;
 
 
-		assertEquals(InteractionResult.HIT, goblin.interact(gameBoard, 15));
+		assertEquals(InteractionResult.HIT, goblin.interact(gameBoard, 15));	 
 
 		for(int i = 0; i < 14; i++) {
 			assertEquals(InteractionResult.NONE, goblin.interact(gameBoard, i));
